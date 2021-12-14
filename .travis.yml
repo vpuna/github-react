@@ -8,3 +8,21 @@ before_install:
 
 script:
   - docker run -e CI=true arnelplim/github-react npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: github-react
+  env: "Githubreact-env"
+  bucket_name: "elasticbeanstalk-us-west-2-216217856763"
+  bucket_path: "github-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+
+# These keys should never be in YAML.  They should be configured to ENV
+# variables in Travis CI for the particular repository being used.
+# AKIATEV4WVL5SZPUYB5N
+# aBY84vdg8HmBQDRUTNqp1W+z0uyYZ9PyyYpl6324
