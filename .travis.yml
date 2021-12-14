@@ -23,5 +23,5 @@ deploy:
 
 # These keys should never be in YAML.  They should be configured to ENV
 # variables in Travis CI for the particular repository being used.
-# AKIATEV4WVL5SZPUYB5N
-# aBY84vdg8HmBQDRUTNqp1W+z0uyYZ9PyyYpl6324
+# NOTE: I put the keys in this file, and AWS actually flagged it as a
+#       security issue.  I had to change the keys!
