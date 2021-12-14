@@ -12,6 +12,10 @@ RUN npm run build
 # 2nd Phase
 
 FROM nginx
+
+# This does nothing for us locally.  Used by AWS elasticbeanstalk
+EXPOSE 80
+
 COPY --from=builder  /app/build /usr/share/nginx/html
 
 # Default start command of nginx base image starts NGINX
