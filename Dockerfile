@@ -14,7 +14,7 @@ RUN npm run build
 FROM nginx
 
 # This does nothing for us locally.  Used by AWS elasticbeanstalk
-EXPOSE 80
+EXPOSE 8081
 
 COPY --from=builder  /app/build /usr/share/nginx/html
 
